@@ -35,8 +35,8 @@ mssql_managed_instances_secondary = {
     minimal_tls_version = "1.2"
     //networking
     networking = {
-      vnet_key   = "sqlmi_region2"
-      subnet_key = "sqlmi2"
+      vnet_key   = "sqlmi_region1"
+      subnet_key = "sqlmi1"
     }
     proxy_override                 = "Default" #"Default,Proxy,Redirect"
     maintenance_configuration_name = "SQL_Default"
@@ -64,21 +64,21 @@ mssql_managed_instances_secondary = {
 }
 
 
-mssql_mi_failover_groups = {
-  sqlmi1_sqlmi2 = {
-    version            = "v1"
-    resource_group_key = "sqlmi_region1"
-    name               = "sqlmi1-sqlmi2"
-    primary_server = {
-      mi_server_key = "sqlmi1"
-    }
-    secondary_server = {
-      mi_server_key = "sqlmi2"
-    }
-    readonly_endpoint_failover_policy_enabled = false
-    read_write_endpoint_failover_policy = {
-      mode          = "Automatic"
-      grace_minutes = 60
-    }
-  }
-}
+# mssql_mi_failover_groups = {
+#   sqlmi1_sqlmi2 = {
+#     version            = "v1"
+#     resource_group_key = "sqlmi_region1"
+#     name               = "sqlmi1-sqlmi2"
+#     primary_server = {
+#       mi_server_key = "sqlmi1"
+#     }
+#     secondary_server = {
+#       mi_server_key = "sqlmi2"
+#     }
+#     readonly_endpoint_failover_policy_enabled = false
+#     read_write_endpoint_failover_policy = {
+#       mode          = "Automatic"
+#       grace_minutes = 60
+#     }
+#   }
+# }

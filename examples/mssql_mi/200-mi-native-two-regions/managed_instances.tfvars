@@ -53,6 +53,43 @@ mssql_managed_instances = {
       enabled = true
     }
 
+    #     private_endpoints = {
+    #   # Require enforce_private_link_endpoint_network_policies set to true on the subnet
+    #   private-link-level4 = {
+    #     name       = "sqlmi1-pe"
+    #     vnet_key   = "sqlmi_region1"
+    #     subnet_key = "sqlmi1pe"
+    #     #subnet_id          = "/subscriptions/97958dac-f75b-4ee3-9a07-9f436fa73bd4/resourceGroups/ppga-rg-sql-rg1/providers/Microsoft.Network/virtualNetworks/ppga-vnet-testvnet1/subnets/ppga-snet-web-subnet"
+    #     resource_group_key = "sqlmi_region1"
+
+    #     private_service_connection = {
+    #       name                 = "sales-sql-rg1"
+    #       is_manual_connection = false
+    #       subresource_names    = ["managedInstance"]
+    #     }
+
+    #     # private_dns = {
+    #     #   zone_group_name = "privatelink_database_windows_net" 
+    #     #   # lz_key          = ""   # If the DNS keys are deployed in a remote landingzone 
+    #     #   keys = ["privatelink"]
+    #     # }
+    #   }
+    # }
+
   }
 }
 
+# private_dns = {
+#   privatelink = {
+#     name               = "privatelink.07f1a81e4b95.database.windows.net"
+#     resource_group_key = "sqlmi_region1"
+
+#     vnet_links = {
+#       sqlmi-pe-link = {
+#         name     = "sqlmi-pe-link"
+#         #lz_key   = "launchpad"
+#         vnet_key = "sqlmi_region1"
+#       }
+#     }
+#   }
+# }

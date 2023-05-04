@@ -4,7 +4,7 @@ variable "global_settings" {
 variable "client_config" {}
 variable "base_tags" {
   description = "Base tags for the resource to be inherited from the resource group."
-  type        = map(any)
+  type        = bool
 }
 variable "subnet_id" {}
 variable "resource_group_name" {
@@ -17,6 +17,12 @@ variable "location" {
 }
 
 variable "managed_identities" {
+}
+
+variable "vnets" {}
+variable "private_endpoints" {}
+variable "private_dns" {
+  default = {}
 }
 
 variable "group_id" {
@@ -55,6 +61,7 @@ variable "settings" {
             "primary_server",
             "proxy_override",
             "public_data_endpoint_enabled",
+            "private_endpoints",
             "region",
             "resource_group",
             "restore_point_in_time",
@@ -92,6 +99,7 @@ variable "settings" {
           "primary_server",
           "proxy_override",
           "public_data_endpoint_enabled",
+          "private_endpoints",
           "region",
           "resource_group",
           "restore_point_in_time",

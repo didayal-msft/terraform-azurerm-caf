@@ -17,8 +17,6 @@ keyvault_keys = {
 }
 
 
-
-
 //set TDE  key
 mssql_mi_tdes = {
   sqlmi1 = {
